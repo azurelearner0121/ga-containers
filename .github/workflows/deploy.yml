@@ -3,11 +3,12 @@ on:
   workflow_dispatch:
 env:
   CACHE_KEY: node-deps
-  MONGODB_DB_NAME: gha-demo
+  MONGODB_DB_NAME: ga-database
 jobs:
   test:
     environment: testing
     runs-on: ubuntu-latest
+    container: node:16      
     env:
       MONGODB_CONNECTION_PROTOCOL: mongodb+srv
       MONGODB_CLUSTER_ADDRESS: cluster0.sqolfnj.mongodb.net
