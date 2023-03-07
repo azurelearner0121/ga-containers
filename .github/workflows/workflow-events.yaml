@@ -14,7 +14,7 @@ on:
      branches: #This is a filter
      - main
      - feature* #Any charecter other than slashes
-     - feature-** #Any charecter incuding slashes
+   #  - feature-** #Any charecter incuding slashes
     # paths: File path
     # paths-ignore:
     # - '.github/workflows/*'
