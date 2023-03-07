@@ -1,0 +1,31 @@
+name: Workflow to learn events
+on:
+  pull_request:
+    type: #This is activity type
+    - opened
+    - assigned
+    branches: #This is a filter
+     - main
+     - feature* #Any charecter other than slashes
+     - feature-** #Any charecter incuding slashes
+
+  workflow_dispatch:
+  push:
+     branches: #This is a filter
+     - main
+     - feature* #Any charecter other than slashes
+     - feature-** #Any charecter incuding slashes
+    # paths: File path
+     paths-ignore:
+     - '.github/workflows/*'
+
+test:
+  runs-on: ubuntu-latest
+  env:
+    REFERENCE_LINK: "https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows"
+  steps:
+  - name: Sy hello
+    run: |
+       echo "Hello world"
+       echo "Pull request has been ${{ github.event.events.pull_request }}"
+  
